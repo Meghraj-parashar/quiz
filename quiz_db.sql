@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2024 at 11:38 AM
+-- Generation Time: Nov 21, 2024 at 12:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,6 +53,29 @@ INSERT INTO `questions` (`id`, `question_text`, `option1`, `option2`, `option3`,
 (9, 'In MySQL, which statement is used to delete a database?', 'DROP DATABASE database_name;', 'REMOVE DATABASE database_name;', 'DELETE DATABASE database_name;', 'ERASE DATABASE database_name;', 1),
 (10, 'Which of the following is a front-end framework?', 'Laravel', 'Django', 'Bootstrap', 'Flask', 3);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sign_up`
+--
+
+CREATE TABLE `sign_up` (
+  `S_no` int(10) NOT NULL,
+  `username` text DEFAULT NULL,
+  `password` int(20) DEFAULT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sign_up`
+--
+
+INSERT INTO `sign_up` (`S_no`, `username`, `password`, `email`) VALUES
+(1, 'meghraj', 123, 'meghraj@gmail.com'),
+(3, 'deepak', 123, 'deepak@gmail.com'),
+(4, 'aditya', 123, 'aditya@gamil.com'),
+(7, 'karishma', 123, 'karishma@gamil.com');
+
 --
 -- Indexes for dumped tables
 --
@@ -64,6 +87,12 @@ ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sign_up`
+--
+ALTER TABLE `sign_up`
+  ADD PRIMARY KEY (`S_no`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -72,6 +101,12 @@ ALTER TABLE `questions`
 --
 ALTER TABLE `questions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `sign_up`
+--
+ALTER TABLE `sign_up`
+  MODIFY `S_no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
